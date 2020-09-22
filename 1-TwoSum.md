@@ -3,8 +3,8 @@
 - You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 ### Note
-* No need to take care of no answer case
-* No answer of duplicate indexes
+* No "no answer" case
+* No duplicate index answer
 
 ## Brute Force
 O(n^2)
@@ -17,8 +17,8 @@ def twoSumBruteForce(self, nums: List[int], target: int) -> List[int]:
 ```
 
 ## Dictionary Utilization
-1. Need to check two numbers in one loop -> need to check two data structure
-2. Given: nums array, Can add: dictionary
+1. Check two numbers in 1 loop -> use 2 data structures
+2. Given: nums array + Add: dictionary
 3. Use complement = target - nums[i] and save it in dictionary
 4. Once complement of current number is found in dictionary, problem solved
 
