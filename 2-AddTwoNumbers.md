@@ -11,7 +11,7 @@
 ## Dictionary Utilization
 O(n)
 ```python
-def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
   # Need two pointers; return node and travelling node that will make result list
   traveller = returnNode = ListNode()
   

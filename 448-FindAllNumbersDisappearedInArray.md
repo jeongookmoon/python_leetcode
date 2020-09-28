@@ -11,7 +11,7 @@
 runtime: O(n), space: O(2*(n+1))=>O(n)
 
 ```python
-def missingNumber(self, nums: List[int]) -> int:
+def missingNumber(nums: List[int]) -> int:
 # Negate integers using each interger as index
   for index, value in enumerate(nums):
     # Since integer starts from 1, minus 1 to use it as index

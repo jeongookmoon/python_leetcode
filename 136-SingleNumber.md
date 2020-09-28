@@ -7,7 +7,7 @@
 ## Bit manipulation
 O(n)
 ```python
-def singleNumber(self, nums: List[int]) -> int:
+def singleNumber(nums: List[int]) -> int:
   if(len(nums) > 0):
     result = nums[0]
     for index, each in enumerate(nums):
@@ -21,7 +21,7 @@ def singleNumber(self, nums: List[int]) -> int:
 ## Simpler
 O(n)
 ```python
-def singleNumber(self, nums: List[int]) -> int:
+def singleNumber(nums: List[int]) -> int:
   result = 0
   for each in nums:
     result ^= each

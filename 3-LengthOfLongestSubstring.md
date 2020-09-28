@@ -10,7 +10,7 @@
 ## Dictionary Utilization + Sliding Window
 O(n)
 ```python
-def lengthOfLongestSubstring(self, s: str) -> int:
+def lengthOfLongestSubstring(s: str) -> int:
   # Test cases:: pwwkew(start #3), dvdf(#2), ckilbkd (#3), tmmzuxt (#3)
   # base assumption: 1 loop -> sliding window
   # common pattern1: start = index of duplicate char + 1

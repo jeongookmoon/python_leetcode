@@ -9,7 +9,7 @@
 ## Brute Force
 O(n^2)
 ```python
-def twoSumBruteForce(self, nums: List[int], target: int) -> List[int]:
+def twoSumBruteForce(nums: List[int], target: int) -> List[int]:
   for i in range(len(nums)):
     for j in range(i+1, len(nums)):
       if nums[i]+nums[j] == target:
@@ -24,7 +24,7 @@ def twoSumBruteForce(self, nums: List[int], target: int) -> List[int]:
 
 O(n)
 ```python
-def twoSumDictionary(self, nums: List[int], target: int) -> List[int]:
+def twoSumDictionary(nums: List[int], target: int) -> List[int]:
   # Will check dictionary + number in array together in one loop
   dictionary = {}
   for i in range(len(nums)):

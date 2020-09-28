@@ -8,7 +8,7 @@
 ## Dictionary Utilization
 O(n)
 ```python
-def containsDuplicate(self, nums: List[int]) -> bool:
+def containsDuplicate(nums: List[int]) -> bool:
     thinSet = set()
     for eachNum in nums:
         if eachNum not in thinSet:
