@@ -4,6 +4,22 @@
 - Note that you cannot sell a stock before you buy one.
 
 ### Note
-* 2 cases between i and i+1: prices[i+1]-prices[i] = **positive** or (negative or 0)
-* 2 cases for positive case in each i+1: **greater** or (less difference)
-* (prices[1] - prices[0]) + (prices[2] - prices[1]) + (prices[3] - prices[2]) = prices[3] - prices[0]
+* maxProfit with a buy = subSum
+* because (p[1]-p[0]) + ([p2]-p[1]) = [p2] - [0]
+* if lower buy appears, subSum = -, so reset subSum = 0
+* maxProfit in the array = subSum max
+
+## Loop
+O(n)
+```python
+def maxProfit(prices: List[int]) -> int:
+  subSum, subSumMax = 0, 0
+  for index in range(1, len(prices)):
+    # find subSum
+    subSum += prices[index] - prices[index-1]
+    # reset to 0 
+    subSum = 0 if subSum < 0 else subSum
+
+    subSumMax = max(subSum, subSumMax)
+  return subSumMax
+```
