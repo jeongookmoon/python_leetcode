@@ -6,7 +6,7 @@
 ### Note
 * Using set, check passed list node
 * Using two pointers; pointerA: increase by one, pointerB: increase by two
-* 
+* If cycle exists, pointerA and pointerB will meet.
 
 ## Using Set
 O(n)
@@ -23,3 +23,17 @@ def hasCycle(head: ListNode) -> bool:
 ```
 
 ## Using Pointers
+O(n)
+```python
+def hasCycle(head: ListNode) -> bool:
+  onebyone, twobytwo = head, head
+  try:
+    while onebyone is not None or twobytwo is not None:
+      onebyone = onebyone.next
+      twobytwo = twobytwo.next.next
+      if onebyone == twobytwo:
+        return True
+    return False
+  except:
+    return False
+```
