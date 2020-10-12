@@ -7,35 +7,20 @@
 * common pattern1: start = index of duplicate char + 1
 * common pattern2: start must move right when duplicate char appears
 
-## Dictionary Utilization + Sliding Window
+## Sliding Window
 O(n)
 ```python
 def lengthOfLongestSubstring(s: str) -> int:
-  # Test cases:: pwwkew(start #3), dvdf(#2), ckilbkd (#3), tmmzuxt (#3)
-  # base assumption: 1 loop -> sliding window
-  # common pattern1: start = index of duplicate char + 1
-  # common pattern2: start must move right when duplicate char appears
-
-  usedSubStr = {}
-  start = maxLength = 0
-
-  for index, char in enumerate(s):
-    # pattern1: start = index of duplicate char + 1
-    if char in usedSubStr:
-
-      # pattern2: start must move when duplicate char appears
-      # 1. start might go left (start already passed duplicate character's index) -> no update if start > usedSubStr[char]
-      # 2. start might not update when duplicate char appears if start == usedSubStr[char]
-      if start < usedSubStr[char] or start == usedSubStr[char]:
-        start = usedSubStr[char] + 1
-
-    # add character to usedSubString dictionary
-    usedSubStr[char] = index
-    currentLength = index - start + 1
-
-    # save maxLength
-    maxLength = max(maxLength, currentLength)
-
-    # print("char %s, index %s, start %s, maxLength %s" %(char, index, start, maxLength))
-  return maxLength
+    # Sliding window
+    seen = {}
+    maxLength = start = 0
+    
+    for index, char in enumerate(s):
+        # ['a', 'a', 'a']; index==1 => start < seen[char], index == 2 => start == seen[char]
+        if char in seen and index and start <= seen[char]:
+            start = seen[char]+1
+        seen[char] = index
+        maxLength = max(index-start+1, maxLength)
+    
+    return maxLength
 ```
