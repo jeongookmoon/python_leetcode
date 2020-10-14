@@ -17,3 +17,18 @@ def invertTree(root: TreeNode) -> TreeNode:
     dfs(root)
     return root
 ```
+
+## Iteration
+runtime: O(n), space: O(n)
+```python
+def invertTree(root: TreeNode) -> TreeNode:
+    stack = [root]
+    
+    while stack:
+      updater = stack.pop()
+      if updater:
+          updater.left, updater.right = updater.right, updater.left
+          stack.extend(updater.left, updater.right)
+    
+    return root
+```
