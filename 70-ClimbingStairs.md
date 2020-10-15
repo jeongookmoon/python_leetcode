@@ -9,7 +9,7 @@
 ## Dictionary Utilization
 O(n)
 ```python
-def climbStairs(self, n: int) -> int:
+def climbStairs(n: int) -> int:
   if n <= 2:
       return n
   
