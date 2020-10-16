@@ -7,10 +7,10 @@ Runtime: O(n), Space: O(n)
 ```python
 class Solution:
     def hasPathSum(self, root: TreeNode, sum: int) -> bool:
-        # Reaching bottom
+        # Reaching the last one's left or right
         if not root:
             return False
-        # Found matching path before reaching bottom
+        # Reaching the last one and found path that matches sum
         elif not (root.left or root.right) and root.val == sum:
             return True
         sum -= root.val
