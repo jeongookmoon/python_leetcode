@@ -10,11 +10,11 @@ def minDepth(root: TreeNode) -> int:
         return 0
     deque = collections.deque([(root, 1)])
     while deque:
-        node, index = deque.popleft()
+        node, level = deque.popleft()
         if node is None:
             continue
         if node.left is None and node.right is None:
-            return index
-        deque.append((node.left, index+1))
-        deque.append((node.right, index+1))
+            return level
+        deque.append((node.left, level+1))
+        deque.append((node.right, level+1))
 ```
