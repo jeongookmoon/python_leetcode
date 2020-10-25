@@ -6,6 +6,17 @@
 runtime: O(n) space: O(1)
 ```python
 def findDuplicate(nums):
+    for number in nums:
+        if nums[abs(number)-1] < 0:
+            return abs(number)
+        else
+            nums[abs(number)-1] *= -1
+```
+
+## Iteration
+runtime: O(n) space: O(1)
+```python
+def findDuplicate(nums):
     # Find the intersection point of the two runners.
     tortoise = hare = nums[0]
     while True:
